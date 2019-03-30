@@ -22,7 +22,6 @@
   },
   "license": "MIT",
   "author": "Jonas Wagner <jonas@29a.ch> (http://29a.ch/)",
-  "files": "simplex-noise.js",
   "main": "./simplex-noise",
   "scripts": {
     "benchmark": "node ./perf/benchmark.js",
@@ -41,5 +40,18 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "mocha": "^5.0.0"
+  },
+  "alfred": {
+    "app": {
+      "targets": {
+        "chrome": 50,
+        "node": 10
+      }
+    },
+    "npmClient": "yarn",
+    "skills": [
+      "@alfredpkg/skill-parcel",
+      "@alfredpkg/skill-testcafe"
+    ]
   }
 }
