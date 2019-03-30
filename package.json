@@ -1,5 +1,5 @@
 {
-  "name": "simplex-noise",
+  "name": "@amilajack/simplex-noise",
   "version": "2.4.0",
   "description": "simplex-noise is a fast simplex noise implementation in Javascript. Works in node and in the browser.",
   "keywords": [

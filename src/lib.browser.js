@@ -5,6 +5,45 @@ const G3 = 1.0 / 6.0;
 const F4 = (Math.sqrt(5.0) - 1.0) / 4.0;
 const G4 = (5.0 - Math.sqrt(5.0)) / 20.0;
 
+/*
+  The ALEA PRNG and masher code used by simplex-noise.js
+  is based on code by Johannes Baagøe, modified by Jonas Wagner.
+  See alea.md for the full license.
+  */
+ export function Alea(...args) {
+  let s0 = 0;
+  let s1 = 0;
+  let s2 = 0;
+  let c = 1;
+
+  let mash = masher();
+  s0 = mash(' ');
+  s1 = mash(' ');
+  s2 = mash(' ');
+
+  for (let i = 0; i < args.length; i++) {
+    s0 -= mash(args[i]);
+    if (s0 < 0) {
+      s0 += 1;
+    }
+    s1 -= mash(args[i]);
+    if (s1 < 0) {
+      s1 += 1;
+    }
+    s2 -= mash(args[i]);
+    if (s2 < 0) {
+      s2 += 1;
+    }
+  }
+  mash = null;
+  return () => {
+    const t = 2091639 * s0 + c * 2.3283064365386963e-10; // 2^-32
+    s0 = s1;
+    s1 = s2;
+    return (s2 = t - (c = t | 0));
+  };
+}
+
 export function buildPermutationTable(random) {
   let i;
   const p = new Uint8Array(256);
@@ -463,43 +502,4 @@ export default class SimplexNoise {
     // Sum up and scale the result to cover the range [-1,1]
     return 27.0 * (n0 + n1 + n2 + n3 + n4);
   }
-}
-
-/*
-  The ALEA PRNG and masher code used by simplex-noise.js
-  is based on code by Johannes Baagøe, modified by Jonas Wagner.
-  See alea.md for the full license.
-  */
-export function alea(...args) {
-  let s0 = 0;
-  let s1 = 0;
-  let s2 = 0;
-  let c = 1;
-
-  let mash = masher();
-  s0 = mash(' ');
-  s1 = mash(' ');
-  s2 = mash(' ');
-
-  for (let i = 0; i < args.length; i++) {
-    s0 -= mash(args[i]);
-    if (s0 < 0) {
-      s0 += 1;
-    }
-    s1 -= mash(args[i]);
-    if (s1 < 0) {
-      s1 += 1;
-    }
-    s2 -= mash(args[i]);
-    if (s2 < 0) {
-      s2 += 1;
-    }
-  }
-  mash = null;
-  return () => {
-    const t = 2091639 * s0 + c * 2.3283064365386963e-10; // 2^-32
-    s0 = s1;
-    s1 = s2;
-    return (s2 = t - (c = t | 0));
-  };
 }
