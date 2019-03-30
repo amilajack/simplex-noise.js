@@ -46,10 +46,11 @@ var suite = new Benchmark.Suite('simplex-noise')
     this.forEach(function(bench) {
       console.log(
         bench.name +
-        ': ' +
-        Benchmark.formatNumber(Math.round(1.0 / bench.times.period)) +
-        ' ops/sec ±' +
-        Math.round(bench.stats.rme) + '%'
+          ': ' +
+          Benchmark.formatNumber(Math.round(1.0 / bench.times.period)) +
+          ' ops/sec ±' +
+          Math.round(bench.stats.rme) +
+          '%'
       );
     });
   })

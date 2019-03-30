@@ -25,7 +25,10 @@
   "main": "./simplex-noise",
   "scripts": {
     "benchmark": "node ./perf/benchmark.js",
-    "test": "eslint simplex-noise.js && mocha"
+    "build": "alfred run build",
+    "lint": "alfred run lint",
+    "start": "alfred run start",
+    "test": "alfred run test"
   },
   "dependencies": {
     "parcel": "^1.11.0"
@@ -34,7 +37,9 @@
     "@alfredpkg/cli": "file:../alfred/packages/cli",
     "@alfredpkg/core": "^0.0.1-alpha.3",
     "@alfredpkg/skill-parcel": "^0.0.1-alpha.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
     "alea": "0.0.9",
+    "babel-preset-jest": "^24.3.0",
     "benchmark": "~2.1.4",
     "chai": "^4.1.2",
     "eslint": "^4.17.0",
@@ -49,7 +54,15 @@
   },
   "alfred": {
     "skills": [
-      "@alfredpkg/skill-parcel"
+      "@alfredpkg/skill-parcel",
+      [
+        "@alfredpkg/skill-babel",
+        {
+          "plugins": [
+            "@babel/plugin-proposal-class-properties"
+          ]
+        }
+      ]
     ]
   }
 }

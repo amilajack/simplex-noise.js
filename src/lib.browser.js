@@ -5,26 +5,61 @@ const G3 = 1.0 / 6.0;
 const F4 = (Math.sqrt(5.0) - 1.0) / 4.0;
 const G4 = (5.0 - Math.sqrt(5.0)) / 20.0;
 
-function SimplexNoise(randomOrSeed) {
-  let random;
-  if (typeof randomOrSeed == 'function') {
-    random = randomOrSeed;
-  } else if (randomOrSeed) {
-    random = alea(randomOrSeed);
-  } else {
-    random = Math.random;
+export function buildPermutationTable(random) {
+  let i;
+  const p = new Uint8Array(256);
+  for (i = 0; i < 256; i++) {
+    p[i] = i;
   }
-  this.p = buildPermutationTable(random);
-  this.perm = new Uint8Array(512);
-  this.permMod12 = new Uint8Array(512);
-  for (let i = 0; i < 512; i++) {
-    this.perm[i] = this.p[i & 255];
-    this.permMod12[i] = this.perm[i] % 12;
+  for (i = 0; i < 255; i++) {
+    const r = i + ~~(random() * (256 - i));
+    const aux = p[i];
+    p[i] = p[r];
+    p[r] = aux;
   }
+  return p;
 }
 
-SimplexNoise.prototype = {
-  grad3: new Float32Array([1, 1, 0,
+export function masher() {
+  let n = 0xefc8249d;
+  return data => {
+    data = data.toString();
+    for (let i = 0; i < data.length; i++) {
+      n += data.charCodeAt(i);
+      let h = 0.02519603282416938 * n;
+      n = h >>> 0;
+      h -= n;
+      h *= n;
+      n = h >>> 0;
+      h -= n;
+      n += h * 0x100000000; // 2^32
+    }
+    return (n >>> 0) * 2.3283064365386963e-10; // 2^-32
+  };
+}
+
+export default class SimplexNoise {
+  constructor(randomOrSeed) {
+    let random;
+    if (typeof randomOrSeed == 'function') {
+      random = randomOrSeed;
+    } else if (randomOrSeed) {
+      random = alea(randomOrSeed);
+    } else {
+      random = Math.random;
+    }
+    this.p = buildPermutationTable(random);
+    this.perm = new Uint8Array(512);
+    this.permMod12 = new Uint8Array(512);
+    for (let i = 0; i < 512; i++) {
+      this.perm[i] = this.p[i & 255];
+      this.permMod12[i] = this.perm[i] % 12;
+    }
+  }
+
+  // prettier-ignore
+  grad3 =  new Float32Array([
+    1, 1, 0,
     -1, 1, 0,
     1, -1, 0,
 
@@ -38,8 +73,11 @@ SimplexNoise.prototype = {
 
     0, -1, 1,
     0, 1, -1,
-    0, -1, -1]),
-  grad4: new Float32Array([
+    0, -1, -1
+  ]);
+
+  // prettier-ignore
+  grad4 =  new Float32Array([
     0, 1, 1, 1, 0, 1, 1, -1, 0, 1, -1, 1, 0, 1, -1, -1,
     0, -1, 1, 1, 0, -1, 1, -1, 0, -1, -1, 1, 0, -1, -1, -1,
     1, 0, 1, 1, 1, 0, 1, -1, 1, 0, -1, 1, 1, 0, -1, -1,
@@ -48,8 +86,9 @@ SimplexNoise.prototype = {
     -1, 1, 0, 1, -1, 1, 0, -1, -1, -1, 0, 1, -1, -1, 0, -1,
     1, 1, 1, 0, 1, 1, -1, 0, 1, -1, 1, 0, 1, -1, -1, 0,
     -1, 1, 1, 0, -1, 1, -1, 0, -1, -1, 1, 0, -1, -1, -1, 0
-  ]),
-  noise2D: function(xin, yin) {
+  ])
+
+  noise2D(xin, yin) {
     var permMod12 = this.permMod12;
     var perm = this.perm;
     var grad3 = this.grad3;
@@ -111,7 +150,7 @@ SimplexNoise.prototype = {
     // Add contributions from each corner to get the final noise value.
     // The result is scaled to return values in the interval [-1,1].
     return 70.0 * (n0 + n1 + n2);
-  },
+  }
   // 3D simplex noise
   noise3D(xin, yin, zin) {
     const permMod12 = this.permMod12;
@@ -248,7 +287,7 @@ SimplexNoise.prototype = {
     // Add contributions from each corner to get the final noise value.
     // The result is scaled to stay just inside [-1,1]
     return 32.0 * (n0 + n1 + n2 + n3);
-  },
+  }
   // 4D simplex noise, better simplex rank ordering method 2012-03-09
   noise4D(x, y, z, w) {
     const perm = this.perm;
@@ -424,30 +463,14 @@ SimplexNoise.prototype = {
     // Sum up and scale the result to cover the range [-1,1]
     return 27.0 * (n0 + n1 + n2 + n3 + n4);
   }
-};
-
-function buildPermutationTable(random) {
-  let i;
-  const p = new Uint8Array(256);
-  for (i = 0; i < 256; i++) {
-    p[i] = i;
-  }
-  for (i = 0; i < 255; i++) {
-    const r = i + ~~(random() * (256 - i));
-    const aux = p[i];
-    p[i] = p[r];
-    p[r] = aux;
-  }
-  return p;
 }
-// SimplexNoise._buildPermutationTable = buildPermutationTable;
 
 /*
   The ALEA PRNG and masher code used by simplex-noise.js
   is based on code by Johannes Baagøe, modified by Jonas Wagner.
   See alea.md for the full license.
   */
-function alea(...args) {
+export function alea(...args) {
   let s0 = 0;
   let s1 = 0;
   let s2 = 0;
@@ -478,23 +501,5 @@ function alea(...args) {
     s0 = s1;
     s1 = s2;
     return (s2 = t - (c = t | 0));
-  };
-}
-
-function masher() {
-  let n = 0xefc8249d;
-  return data => {
-    data = data.toString();
-    for (let i = 0; i < data.length; i++) {
-      n += data.charCodeAt(i);
-      let h = 0.02519603282416938 * n;
-      n = h >>> 0;
-      h -= n;
-      h *= n;
-      n = h >>> 0;
-      h -= n;
-      n += h * 0x100000000; // 2^32
-    }
-    return (n >>> 0) * 2.3283064365386963e-10; // 2^-32
   };
 }
