@@ -27,13 +27,19 @@
     "benchmark": "node ./perf/benchmark.js",
     "test": "eslint simplex-noise.js && mocha"
   },
+  "dependencies": {
+    "parcel": "^1.11.0"
+  },
   "devDependencies": {
-    "@alfredpkg/cli": "^0.0.1-alpha.3",
+    "@alfredpkg/cli": "file:../alfred/packages/cli",
     "@alfredpkg/core": "^0.0.1-alpha.3",
+    "@alfredpkg/skill-parcel": "^0.0.1-alpha.3",
     "alea": "0.0.9",
     "benchmark": "~2.1.4",
     "chai": "^4.1.2",
     "eslint": "^4.17.0",
+    "eslint-config-bliss": "^3.3.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^6.0.0",
@@ -42,16 +48,8 @@
     "mocha": "^5.0.0"
   },
   "alfred": {
-    "app": {
-      "targets": {
-        "chrome": 50,
-        "node": 10
-      }
-    },
-    "npmClient": "yarn",
     "skills": [
-      "@alfredpkg/skill-parcel",
-      "@alfredpkg/skill-testcafe"
+      "@alfredpkg/skill-parcel"
     ]
   }
 }

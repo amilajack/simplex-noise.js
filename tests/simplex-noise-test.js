@@ -16,7 +16,9 @@ describe('SimplexNoise', function() {
       }
     });
     it('can contain 0 in the first position', function() {
-      function zero() { return 0; }
+      function zero() {
+        return 0;
+      }
       var table = SimplexNoise._buildPermutationTable(zero);
       var aTable = Array.prototype.slice.call(table);
       for (var i = 0; i < aTable.length; i++) {
@@ -77,7 +79,10 @@ describe('SimplexNoise', function() {
         assert.equal(simplex.noise2D(0.1, 0.2), simplex.noise2D(0.1, 0.2));
       });
       it('should return a different value for a different input', function() {
-        assert.notEqual(simplex.noise2D(0.1, 0.2), simplex.noise2D(0.101, 0.202));
+        assert.notEqual(
+          simplex.noise2D(0.1, 0.2),
+          simplex.noise2D(0.101, 0.202)
+        );
       });
       it('should return a different output with a different seed', function() {
         var simplex2 = new SimplexNoise(new Alea('other seed'));
@@ -92,21 +97,36 @@ describe('SimplexNoise', function() {
         }
       });
       it('should return similar values for similar inputs', function() {
-        assert(Math.abs(simplex.noise2D(0.1, 0.2) - simplex.noise2D(0.101, 0.202)) < 0.1);
+        assert(
+          Math.abs(simplex.noise2D(0.1, 0.2) - simplex.noise2D(0.101, 0.202)) <
+            0.1
+        );
       });
     });
 
     describe('noise3D', function() {
       it('should return the same value for the same input', function() {
-        assert.equal(simplex.noise3D(0.1, 0.2, 0.3), simplex.noise3D(0.1, 0.2, 0.3));
+        assert.equal(
+          simplex.noise3D(0.1, 0.2, 0.3),
+          simplex.noise3D(0.1, 0.2, 0.3)
+        );
       });
       it('should return a different value for a different input', function() {
-        assert.notEqual(simplex.noise3D(0.1, 0.2, 0.3), simplex.noise3D(0.101, 0.202, 0.303));
-        assert.notEqual(simplex.noise3D(0.1, 0.2, 0.3), simplex.noise3D(0.1, 0.2, 0.303));
+        assert.notEqual(
+          simplex.noise3D(0.1, 0.2, 0.3),
+          simplex.noise3D(0.101, 0.202, 0.303)
+        );
+        assert.notEqual(
+          simplex.noise3D(0.1, 0.2, 0.3),
+          simplex.noise3D(0.1, 0.2, 0.303)
+        );
       });
       it('should return a different output with a different seed', function() {
         var simplex2 = new SimplexNoise(new Alea('other seed'));
-        assert.notEqual(simplex.noise2D(0.1, 0.2, 0.3), simplex2.noise2D(0.1, 0.2, 0.3));
+        assert.notEqual(
+          simplex.noise2D(0.1, 0.2, 0.3),
+          simplex2.noise2D(0.1, 0.2, 0.3)
+        );
       });
       it('should return values between -1 and 1', function() {
         for (var x = 0; x < 10; x++) {
@@ -117,21 +137,38 @@ describe('SimplexNoise', function() {
         }
       });
       it('should return similar values for similar inputs', function() {
-        assert(Math.abs(simplex.noise3D(0.1, 0.2, 0.3) - simplex.noise3D(0.101, 0.202, 0.303)) < 0.1);
+        assert(
+          Math.abs(
+            simplex.noise3D(0.1, 0.2, 0.3) -
+              simplex.noise3D(0.101, 0.202, 0.303)
+          ) < 0.1
+        );
       });
     });
 
     describe('noise4D', function() {
       it('should return the same value for the same input', function() {
-        assert.equal(simplex.noise4D(0.1, 0.2, 0.3, 0.4), simplex.noise4D(0.1, 0.2, 0.3, 0.4));
+        assert.equal(
+          simplex.noise4D(0.1, 0.2, 0.3, 0.4),
+          simplex.noise4D(0.1, 0.2, 0.3, 0.4)
+        );
       });
       it('should return a different value for a different input', function() {
-        assert.notEqual(simplex.noise4D(0.1, 0.2, 0.3, 0.4), simplex.noise4D(0.101, 0.202, 0.303, 0.404));
-        assert.notEqual(simplex.noise4D(0.1, 0.2, 0.3, 0.4), simplex.noise4D(0.1, 0.2, 0.3, 0.404));
+        assert.notEqual(
+          simplex.noise4D(0.1, 0.2, 0.3, 0.4),
+          simplex.noise4D(0.101, 0.202, 0.303, 0.404)
+        );
+        assert.notEqual(
+          simplex.noise4D(0.1, 0.2, 0.3, 0.4),
+          simplex.noise4D(0.1, 0.2, 0.3, 0.404)
+        );
       });
       it('should return a different output with a different seed', function() {
         var simplex2 = new SimplexNoise(new Alea('other seed'));
-        assert.notEqual(simplex.noise2D(0.1, 0.2, 0.3, 0.4), simplex2.noise2D(0.1, 0.2, 0.3, 0.4));
+        assert.notEqual(
+          simplex.noise2D(0.1, 0.2, 0.3, 0.4),
+          simplex2.noise2D(0.1, 0.2, 0.3, 0.4)
+        );
       });
       it('should return values between -1 and 1', function() {
         for (var x = 0; x < 10; x++) {
@@ -145,8 +182,9 @@ describe('SimplexNoise', function() {
         assert(
           Math.abs(
             simplex.noise4D(0.1, 0.2, 0.3, 0.4) -
-            simplex.noise4D(0.101, 0.202, 0.303, 0.404)
-          ) < 0.1);
+              simplex.noise4D(0.101, 0.202, 0.303, 0.404)
+          ) < 0.1
+        );
       });
     });
   });

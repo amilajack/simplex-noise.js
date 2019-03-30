@@ -49,6 +49,42 @@
     validate-npm-package-license "^3.0.4"
     validate-npm-package-name "^3.0.0"
 
+"@alfredpkg/cli@file:../alfred/packages/cli":
+  version "0.0.1-alpha.3"
+  dependencies:
+    "5to6-codemod" "^1.7.1"
+    "@alfredpkg/merge-configs" "^0.0.1-alpha.3"
+    "@amilajack/powerset" "^0.0.0"
+    "@babel/code-frame" "^7.0.0"
+    chalk "^2.4.2"
+    child-process-promise "^2.2.1"
+    cli-table3 "^0.5.1"
+    commander "^2.19.0"
+    eslint "^5.15.0"
+    eslint-config-bliss "^3.2.0"
+    eslint-plugin-flowtype-errors "^3.6.0"
+    findit "^2.0.0"
+    format-package "^4.5.0"
+    git-config "^0.0.7"
+    gitignore-parser "^0.0.2"
+    handlebars "^4.1.0"
+    inquirer "^6.2.2"
+    jscodeshift "^0.6.3"
+    lebab "^3.0.3"
+    lodash "^4.17.11"
+    lodash.flatten "^4.4.0"
+    microjob "^0.4.2"
+    npm "^6.8.0"
+    pkg-up "^2.0.0"
+    rimraf "^2.6.3"
+    rndm "^1.2.0"
+    signale "^1.3.0"
+    simple-git "^1.107.0"
+    uniq "^1.0.1"
+    update-notifier "^2.5.0"
+    validate-npm-package-license "^3.0.4"
+    validate-npm-package-name "^3.0.0"
+
 "@alfredpkg/core@^0.0.1-alpha.3":
   version "0.0.1-alpha.3"
   resolved "http://localhost:4873/@alfredpkg%2fcore/-/core-0.0.1-alpha.3.tgz#cb553d4f1bc5b7bcc399858dddb5986f51ed9a41"
@@ -4769,7 +4805,7 @@ eslint-config-airbnb-base@^13.1.0:
     object.assign "^4.1.0"
     object.entries "^1.0.4"
 
-eslint-config-bliss@^3.2.0:
+eslint-config-bliss@^3.2.0, eslint-config-bliss@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/eslint-config-bliss/-/eslint-config-bliss-3.3.0.tgz#34a2f94f80c707d59d8f108442f3691ce55d2735"
   integrity sha512-ihJTtRS1D6Je5+7efGdsFIsX06mVByxA7zH+OfGd6hA45msN12CMKOurP8gssBZ5EuSaGAr+iqMXzuateOTy5g==
@@ -4786,7 +4822,7 @@ eslint-config-bliss@^3.2.0:
     flow-bin "^0.92.1"
     prettier "^1.16.4"
 
-eslint-config-prettier@^4.0.0:
+eslint-config-prettier@^4.0.0, eslint-config-prettier@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.1.0.tgz#181364895899fff9fd3605fecb5c4f20e7d5f395"
   integrity sha512-zILwX9/Ocz4SV2vX7ox85AsrAgXV3f2o2gpIicdMIOra48WYqgUnWNH/cR/iHtmD2Vb3dLSC3LiEJnS05Gkw7w==
