@@ -10,7 +10,7 @@ const G4 = (5.0 - Math.sqrt(5.0)) / 20.0;
   is based on code by Johannes Baagøe, modified by Jonas Wagner.
   See alea.md for the full license.
   */
- export function Alea(...args) {
+export function Alea(...args) {
   let s0 = 0;
   let s1 = 0;
   let s2 = 0;
