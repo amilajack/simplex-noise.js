@@ -83,7 +83,7 @@ export default class SimplexNoise {
     if (typeof randomOrSeed == 'function') {
       random = randomOrSeed;
     } else if (randomOrSeed) {
-      random = alea(randomOrSeed);
+      random = Alea(randomOrSeed);
     } else {
       random = Math.random;
     }
