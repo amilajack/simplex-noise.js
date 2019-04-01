@@ -26,6 +26,7 @@
   "scripts": {
     "benchmark": "node ./perf/benchmark.js",
     "build": "alfred run build",
+    "format": "alfred run format",
     "lint": "alfred run lint",
     "start": "alfred run start",
     "test": "alfred run test"
