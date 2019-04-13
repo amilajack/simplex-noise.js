@@ -2,6 +2,8 @@
 
 simplex-noise.js is a fast simplex noise implementation in Javascript. It works in the browser and on nodejs.
 
+[![Build Status](https://dev.azure.com/amilajack/amilajack/_apis/build/status/amilajack.simplex-noise.js?branchName=master)](https://dev.azure.com/amilajack/amilajack/_build/latest?definitionId=15&branchName=master)
+
 ## Demos
 
 - Simple 2D plasma on [codepen.io](http://codepen.io/jwagner/pen/BNmpdm/?editors=001).
