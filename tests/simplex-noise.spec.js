@@ -1,6 +1,6 @@
-import SimplexNoise, { buildPermutationTable } from '../src/lib.browser';
 import Alea from 'alea';
 import { assert } from 'chai';
+import SimplexNoise, { buildPermutationTable } from '../src/lib.browser';
 
 describe('SimplexNoise', () => {
   function getRandom() {
@@ -11,7 +11,7 @@ describe('SimplexNoise', () => {
     it('contains all indices exactly once', () => {
       const table = buildPermutationTable(getRandom());
       const aTable = Array.prototype.slice.call(table);
-      for (let i = 0; i < aTable.length; i++) {
+      for (let i = 0; i < aTable.length; i += 1) {
         assert.include(aTable, i);
       }
     });
@@ -22,7 +22,7 @@ describe('SimplexNoise', () => {
       }
       const table = buildPermutationTable(zero);
       const aTable = Array.prototype.slice.call(table);
-      for (let i = 0; i < aTable.length; i++) {
+      for (let i = 0; i < aTable.length; i += 1) {
         assert.equal(aTable[i], i);
       }
     });
@@ -32,7 +32,7 @@ describe('SimplexNoise', () => {
     function checkPermutationTable({ perm, permMod12 }) {
       assert.equal(perm.length, 512);
       assert.equal(permMod12.length, 512);
-      for (let i = 0; i < 512; i++) {
+      for (let i = 0; i < 512; i += 1) {
         assert.isBelow(perm[i], 256);
         assert.isAtLeast(perm[i], 0);
         assert.equal(perm[i], perm[i & 255]);
@@ -95,8 +95,8 @@ describe('SimplexNoise', () => {
       });
 
       it('should return values between -1 and 1', () => {
-        for (let x = 0; x < 10; x++) {
-          for (let y = 0; y < 10; y++) {
+        for (let x = 0; x < 10; x += 1) {
+          for (let y = 0; y < 10; y += 1) {
             assert(simplex.noise2D(x / 5, y / 5) >= -1);
             assert(simplex.noise2D(x / 5, y / 5) <= 1);
           }
@@ -139,8 +139,8 @@ describe('SimplexNoise', () => {
       });
 
       it('should return values between -1 and 1', () => {
-        for (let x = 0; x < 10; x++) {
-          for (let y = 0; y < 10; y++) {
+        for (let x = 0; x < 10; x += 1) {
+          for (let y = 0; y < 10; y += 1) {
             assert(simplex.noise3D(x / 5, y / 5, x + y) >= -1);
             assert(simplex.noise3D(x / 5, y / 5, x + y) <= 1);
           }
@@ -185,8 +185,8 @@ describe('SimplexNoise', () => {
       });
 
       it('should return values between -1 and 1', () => {
-        for (let x = 0; x < 10; x++) {
-          for (let y = 0; y < 10; y++) {
+        for (let x = 0; x < 10; x += 1) {
+          for (let y = 0; y < 10; y += 1) {
             assert(simplex.noise4D(x / 5, y / 5, x + y, x - y) >= -1);
             assert(simplex.noise4D(x / 5, y / 5, x + y, x - y) <= 1);
           }

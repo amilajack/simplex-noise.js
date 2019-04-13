@@ -11,11 +11,21 @@
     lodash "^4.17.4"
     recast "^0.12.1"
 
-"@alfredpkg/cli@file:../alfred/packages/cli":
-  version "0.0.1-alpha.3"
+"@amilajack/alfred@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/alfred/-/alfred-0.0.1-alpha.0.tgz#df08a7faeed1ff5ecb58a511baf930c31f431a74"
+  integrity sha512-wmzRDr6smyDPQzLSKM5nojKmvAbDHZkm2lUpclyCi9Tknu46E5t1kOYuLe7n7YWb2Bqns9fOXfPsFdscBqs1FA==
+  dependencies:
+    "@amilajack/cli" "^0.0.1-alpha.0"
+    "@amilajack/core" "^0.0.1-alpha.0"
+
+"@amilajack/cli@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/cli/-/cli-0.0.1-alpha.0.tgz#cc954e45b77be090437bc4d9cd80aff0dc77ec24"
+  integrity sha512-0KfbiuR379uUx41LhLsg8P482XzmsNRoMbsjUAoIb9sWq1oV2BqPub5d2xeizabsBquPFGudBmF9ED2pAzC/yw==
   dependencies:
     "5to6-codemod" "^1.7.1"
-    "@alfredpkg/merge-configs" "^0.0.1-alpha.3"
+    "@amilajack/merge-configs" "^0.0.1-alpha.0"
     "@amilajack/powerset" "^0.0.0"
     "@babel/code-frame" "^7.0.0"
     chalk "^2.4.2"
@@ -47,26 +57,26 @@
     validate-npm-package-license "^3.0.4"
     validate-npm-package-name "^3.0.0"
 
-"@alfredpkg/core@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fcore/-/core-0.0.1-alpha.3.tgz#cb553d4f1bc5b7bcc399858dddb5986f51ed9a41"
-  integrity sha512-0rECCo9j/oB/72TRNktHwpbnFBhg3D9Jnkklm1nK3qKCUizlCYA5rm8yLouN/TkL+V1CiMko7jX5tF1YEq00Ow==
+"@amilajack/core@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/core/-/core-0.0.1-alpha.0.tgz#47d1fc47058f324f7f7cf80578fd8d8bb9b1247d"
+  integrity sha512-9edjbnafCJYxmgKMsTnv/Bi4WUJwK0/8jxPlN8nEyeul6vOZdt08qtGFfhRggq6pId3Fb0/0DYXBq0Sj5St2gg==
   dependencies:
-    "@alfredpkg/interface-build" "^0.0.1-alpha.3"
-    "@alfredpkg/interface-format" "^0.0.1-alpha.3"
-    "@alfredpkg/interface-lint" "^0.0.1-alpha.3"
-    "@alfredpkg/interface-start" "^0.0.1-alpha.3"
-    "@alfredpkg/interface-test" "^0.0.1-alpha.3"
-    "@alfredpkg/merge-configs" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-babel" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-eslint" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-jest" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-lodash" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-parcel" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-prettier" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-react" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-rollup" "^0.0.1-alpha.3"
-    "@alfredpkg/skill-webpack" "^0.0.1-alpha.3"
+    "@amilajack/interface-build" "^0.0.1-alpha.0"
+    "@amilajack/interface-format" "^0.0.1-alpha.0"
+    "@amilajack/interface-lint" "^0.0.1-alpha.0"
+    "@amilajack/interface-start" "^0.0.1-alpha.0"
+    "@amilajack/interface-test" "^0.0.1-alpha.0"
+    "@amilajack/merge-configs" "^0.0.1-alpha.0"
+    "@amilajack/skill-babel" "^0.0.1-alpha.0"
+    "@amilajack/skill-eslint" "^0.0.1-alpha.0"
+    "@amilajack/skill-jest" "^0.0.1-alpha.0"
+    "@amilajack/skill-lodash" "^0.0.1-alpha.0"
+    "@amilajack/skill-parcel" "^0.0.1-alpha.0"
+    "@amilajack/skill-prettier" "^0.0.1-alpha.0"
+    "@amilajack/skill-react" "^0.0.1-alpha.0"
+    "@amilajack/skill-rollup" "^0.0.1-alpha.0"
+    "@amilajack/skill-webpack" "^0.0.1-alpha.0"
     debug "^4.1.1"
     format-package "^4.5.0"
     joi "^14.3.1"
@@ -75,53 +85,58 @@
     rimraf "^2.6.2"
     toposort "^2.0.2"
 
-"@alfredpkg/helpers@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fhelpers/-/helpers-0.0.1-alpha.3.tgz#16f45a9b42136043b4393b4040a0b12c6f2bc58d"
-  integrity sha512-2mo51cgvWP8nP8K1pP4dgTQuQlr3HQAdGvg/GYEKni3V2wQiLG9Yj7hWuKa0CmjRaKE3KOJSSfosNVZ6AR64Cg==
+"@amilajack/helpers@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/helpers/-/helpers-0.0.1-alpha.0.tgz#b504929609e3fe7df5e9c4d5d4f335bee928eacf"
+  integrity sha512-zDKNeYDqDjxuIzauYvuagjN8o8KUTtNiGJbo1y0pVzSMk9sFZvWAFmiqZl7GY7DWk/Rx8pArIh23h3dMfJI24w==
   dependencies:
     opn "^5.4.0"
 
-"@alfredpkg/interface-build@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2finterface-build/-/interface-build-0.0.1-alpha.3.tgz#01022ecaae4a373cba18b45cf9e00873e4f53136"
-  integrity sha512-bP+xQik12a3HsC968C8Mrt7AFXFDgqg2b0V/LGxvupxgK2d5yYW3n5+CpKM6HBElA9vIZsec1vNZUHqxjE/gEA==
+"@amilajack/interface-build@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/interface-build/-/interface-build-0.0.1-alpha.0.tgz#dcef829f860ca024e6680614428c00508709148d"
+  integrity sha512-W45jH3is35KWKAdAkFBbWQZS5xNffEK0tphxNlgtdrB4jE9vCJpJXEULiu+bhX3+kTunEmLtdAVBZfX+a3/kTw==
   dependencies:
     debug "^4.1.1"
 
-"@alfredpkg/interface-format@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2finterface-format/-/interface-format-0.0.1-alpha.3.tgz#6b48dbab848e5b0a29f533461a651336a63b1e94"
-  integrity sha512-fxhPPM2ggefKRiPYabAfpFSVWa+H0tDDEEy9vqt1JnxLb5WPKilcSVdXHRG/nw+jhqe4nWk/fc4W0fNsONP4xg==
+"@amilajack/interface-format@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/interface-format/-/interface-format-0.0.1-alpha.0.tgz#6a85b5d91f7b756bf4a02da87be64ba9f8f0e31c"
+  integrity sha512-nbKbvMtsiKI/ccAcN1V+jELFtOB2SnhBoBGmbIzgJMOW1v6yVnqDTqJau/weopMOtdjXrlUenTIovJL/Iuo7sg==
 
-"@alfredpkg/interface-lint@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2finterface-lint/-/interface-lint-0.0.1-alpha.3.tgz#b01bd9efcd539106081fd4e0e43d4dcb78849c77"
-  integrity sha512-QxMcqk6k3LzONRIPRZv+oyGy5XEP3Igevt3XvbLSQyL/gfSABRjgy9qaxArianbXnAb8nXqdGpIxDLEorv++/A==
+"@amilajack/interface-lint@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/interface-lint/-/interface-lint-0.0.1-alpha.0.tgz#97c5223ed9d6f5707ba5c9262ae70aaa95a4a5e3"
+  integrity sha512-ut0OWw8A9nUYOlGzc/JNnZ2Ns6xWxoUcIEjA9JdLBuOJMPEpSLXoSQoKVhn7HlfkCOB8V1OPdYM0dTpgyjfdSQ==
 
-"@alfredpkg/interface-start@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2finterface-start/-/interface-start-0.0.1-alpha.3.tgz#7a21cd397958c719646ee849d018ed623243969c"
-  integrity sha512-SXgPEYBUTcVZ61tqMknJd/lW/UZDWxOz5KA7hSacz3sjRTt6IPrIAjq7d38Iij2OLgka57vBeMC2mK4M/OU1RA==
+"@amilajack/interface-start@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/interface-start/-/interface-start-0.0.1-alpha.0.tgz#4c39c239654fb3a6796b87b69115d1fc122e7fd0"
+  integrity sha512-IO3xfvIKhaQSxq7XnpZ0/CgmOIOTC4/G+SVhIwXB3ucd4ae+SjcgXmYX1qNrq9aYEobPwRLLLwgz6O9+Xq0TpA==
   dependencies:
     debug "^4.1.1"
 
-"@alfredpkg/interface-test@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2finterface-test/-/interface-test-0.0.1-alpha.3.tgz#f0923f94199ba029e060f3b57db645a0fb325ab8"
-  integrity sha512-Y1fE3m5KgzK6J2xHbyYfyE+ArF9KP5atJI/9K11XENUcCUzm9MP0A9aNTXkur9g0FKNgzXPwjXiUx4M7QQ43Lw==
+"@amilajack/interface-test@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/interface-test/-/interface-test-0.0.1-alpha.0.tgz#fd3c7a22ee596cf75e206e404191ac63cfee00ef"
+  integrity sha512-NAfoj8FflbsEkkptAAf780JskRaJsDvKNpI4e22PLPH2LRYoF9FCWI/SE2z6xdT47jBZgII5br/wH15zHQn90Q==
 
-"@alfredpkg/merge-configs@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fmerge-configs/-/merge-configs-0.0.1-alpha.3.tgz#77567a9715bb618511269825fcdbb8e5568afd60"
-  integrity sha512-PVUwvi9KFky52pTIVsdjwRRrwLLZORnZYxSx/Forl22/r6zY1c7n9uFzpsZpIWkIX70I//+4FUYam5glhlURRA==
+"@amilajack/merge-configs@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/merge-configs/-/merge-configs-0.0.1-alpha.0.tgz#16d6cff873b623d00e6d60a28ed5e547c0b976ec"
+  integrity sha512-HPgXmbu60o3gQmu2PecS60WQoqqscsYAZsLmXzEMvFvow4I6VWhVCzYuooICEN6Pw8PiOvZ4NWvkhIbVMRa0gA==
   dependencies:
     lodash "^4.17.11"
 
-"@alfredpkg/skill-babel@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-babel/-/skill-babel-0.0.1-alpha.3.tgz#1bbbedb7bebd613b94af3895a49662fd14f69d22"
-  integrity sha512-/0gxoWNA31gEHzhPffoPZRa75NLkjngdRHJvjsdiCOViqdy6wpLlkgcRB6oFCXmKtNdG6zCILJ114TJm5KUQQQ==
+"@amilajack/powerset@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/powerset/-/powerset-0.0.0.tgz#3322c7642ddad8d5ebccb43b05520c29e83699d5"
+  integrity sha512-7l2qD/fBrGROYDGqPMFYn+xKKwWadKSpGkvYQ7Q7TESnw6ffQkKqe6o6knk5+yqzCNPlUgmAvLUaPH507UfJdQ==
+
+"@amilajack/skill-babel@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-babel/-/skill-babel-0.0.1-alpha.0.tgz#4602f4fbac20ba3609149f60c3cae19b39f529a4"
+  integrity sha512-lBt6t1QUVPq/1TbvdiMNJl4TNcgKFpvWyBZ+9l0iRIqlzFQpFvLkaSwh7WI4e4LFRtrKCDzdTQWR59dPJnRTrg==
   dependencies:
     "@babel/cli" "^7.2.3"
     "@babel/core" "^7.3.4"
@@ -131,78 +146,73 @@
     babel-core "^7.0.0-bridge.0"
     babel-loader "8.0.5"
 
-"@alfredpkg/skill-eslint@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-eslint/-/skill-eslint-0.0.1-alpha.3.tgz#e2f772863146e2ffc1824ca38daab0ee715fe175"
-  integrity sha512-Dw0Fql627bN0PdtocMIrdunzilaAe7CpzF2B5MzpOwuHbvDQp7u4Gg45x2pgvImCw+sBjeuaHMvyuJRQUfhy5A==
+"@amilajack/skill-eslint@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-eslint/-/skill-eslint-0.0.1-alpha.0.tgz#af4beb6945b720317debccec683df959695072b0"
+  integrity sha512-GBlF8z71p42wvoe1g+zzcx0gOzjcvD/X7U0RRxpvmTP4VZqEdqIPCjarfwoHR1qnFTGsDDYxOt+VAO/aCTrD5w==
   dependencies:
     eslint "^5.15.0"
 
-"@alfredpkg/skill-jest@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-jest/-/skill-jest-0.0.1-alpha.3.tgz#d524680635c47d4f58f4cb7af3ca12f0d78ed5d6"
-  integrity sha512-3A6WfvN3bTlwAYpzisO03/o3ycf1o3+qtVG48N8jcbdrwavavAsdPDgbTdieOoi0+W1OI8Ra0eWXLp7DKtO3Ew==
+"@amilajack/skill-jest@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-jest/-/skill-jest-0.0.1-alpha.0.tgz#61507a84f237e0763f0583157c73057e5c8c34b3"
+  integrity sha512-VYyF/eKvX0nq191vW3VyyOQJCvkFSb07KTdeiDtIzAf96AYEfJt34udQo2DHWcL4YDXJdr/Wh61/Knqf0BIKqQ==
   dependencies:
     crypto "^1.0.1"
     jest "^24.0.0"
 
-"@alfredpkg/skill-lodash@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-lodash/-/skill-lodash-0.0.1-alpha.3.tgz#36772235f849b00940a500b083105f429927e709"
-  integrity sha512-yqm82HyDZveFXtcI0bdti4U9QsUZKKiwItOl72mjylC4YjNehzFTyXAGl3VbCWceZLkAnk79mSuGUJSIEIpZPQ==
+"@amilajack/skill-lodash@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-lodash/-/skill-lodash-0.0.1-alpha.0.tgz#9a7f457f93aa87176af3f8e356d79bfd04a801c8"
+  integrity sha512-TRxdICtLkKgbKpMuWxwNCOLySFMRutUzGGgOaiQb/X2FeFiKao1vdLTmNti+9Ef48l8KZeSTRaS/V9EHTjnYBg==
   dependencies:
     lodash-webpack-plugin "0.11.5"
 
-"@alfredpkg/skill-parcel@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-parcel/-/skill-parcel-0.0.1-alpha.3.tgz#b16fd0f764fd58ec91ca31e464c631c5ae8595fe"
-  integrity sha512-w9dr2/h6G12KDIhFDU8eAcsTD3/oR6viLa9Db6aMQBlnTPRY/nE5N34lnhYg1K8OmXNCM1sMADheU4ppeSSJiA==
+"@amilajack/skill-parcel@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-parcel/-/skill-parcel-0.0.1-alpha.0.tgz#be2c296d856fa636bac3b4bd9093e39c7a5e8715"
+  integrity sha512-pO+QHwM8yKYVTqvGaYHdk7o2G9PkjG9kZHg0StilKVpe1nY3i7pe7nGimod+EAuwLfe+4/Ksi9zE2zZbnDEb/A==
   dependencies:
-    "@alfredpkg/helpers" "^0.0.1-alpha.3"
+    "@amilajack/helpers" "^0.0.1-alpha.0"
     parcel "^1.11.0"
 
-"@alfredpkg/skill-prettier@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-prettier/-/skill-prettier-0.0.1-alpha.3.tgz#4284d5367570961f6d6f46982f3638349d729db2"
-  integrity sha512-DJGLMMYsc6GeNnB4HmVTtba2XkXIQF4K1dF/jUEeFY6NpnubiBnShc25EYArHDuI0fqpnWnVihKxgJbhK1urEQ==
+"@amilajack/skill-prettier@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-prettier/-/skill-prettier-0.0.1-alpha.0.tgz#e25cb8091d00ed209d76e5ffce2d7e9a481e5ec5"
+  integrity sha512-dEeaXZQ/ROz6YpE7i4JieP1YGQP6SIxGM4pZyj4dbfZ0fPY/Bcv+sDQC6r2117Xc5uwkL4KagwkPq6BtmOsoOA==
   dependencies:
     prettier "^1.16.4"
 
-"@alfredpkg/skill-react@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-react/-/skill-react-0.0.1-alpha.3.tgz#dfa7146db67963c1000c9500888073abf927aefa"
-  integrity sha512-qcdW2RMPyM4eGtSkQ7+4PfTn9evUvETzb4utm/wcko7yq/XaCGTCrwexiLbflNW0blTnw85omXdD5AOgZHuyXw==
+"@amilajack/skill-react@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-react/-/skill-react-0.0.1-alpha.0.tgz#b86b7286dfa6bdc81645cc1351bb0f0b289ea3e4"
+  integrity sha512-VN92/Ocw3iD+SBiQFkZojEQt4ZdbJQb+QdXyOf1Gv3zWzLUsX8+eD1ZmaNwka6HiaQekI0dTd1a1Ahg5+6tEcA==
   dependencies:
     "@babel/preset-env" "^7.3.4"
     react-hot-loader "^4.6.3"
 
-"@alfredpkg/skill-rollup@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-rollup/-/skill-rollup-0.0.1-alpha.3.tgz#4965b68f3255ce5900014cb862f54a3f7e4ed050"
-  integrity sha512-5UIEMYIfiZcsUjekuD+TpmNc6XnXmA5EPDsle05aJLEJlQ9O+Jm+mLHTI3X1IyFTpba/IPUdJLS6xOMy6+DXxA==
+"@amilajack/skill-rollup@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-rollup/-/skill-rollup-0.0.1-alpha.0.tgz#4f45227c625c19417600e8e1e6034f611d5a2a6e"
+  integrity sha512-icGzr0WQCtnl9RG1NYpA95LcJwvOP90j5SA5ly8C56szuQQe2VQi14SxHmcTeYd4ORg/g8k2Q7qa6wuvdVFq+Q==
   dependencies:
-    "@alfredpkg/merge-configs" "^0.0.1-alpha.3"
+    "@amilajack/merge-configs" "^0.0.1-alpha.0"
     rollup "1.1.2"
     rollup-plugin-babel "^4.3.2"
     rollup-plugin-commonjs "^9.2.0"
     rollup-plugin-replace "2.1.0"
 
-"@alfredpkg/skill-webpack@^0.0.1-alpha.3":
-  version "0.0.1-alpha.3"
-  resolved "http://localhost:4873/@alfredpkg%2fskill-webpack/-/skill-webpack-0.0.1-alpha.3.tgz#8b6edf622579445f4caf9bef407a3f612855c9f8"
-  integrity sha512-Qqfu5JfbJ+5DUXCUR5agdUT3Bo7O4ldTzIB/OVgYcnRaSNOV8pJU4q4ZYlJZ52YcJTehY8rgX9bbus8AcqNrgA==
+"@amilajack/skill-webpack@^0.0.1-alpha.0":
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@amilajack/skill-webpack/-/skill-webpack-0.0.1-alpha.0.tgz#3c065a3c408c34b57ac7db5249df9510ebb3bfc6"
+  integrity sha512-3SS1eiqhRxb0CcZ6yrXVyOfCRS5pERhhbC/i8thjM1vj7g1uf5Go/EI3eYzmBy8+rp5uLzh/rYb46nRE5nRYtw==
   dependencies:
-    "@alfredpkg/helpers" "^0.0.1-alpha.3"
-    "@alfredpkg/merge-configs" "^0.0.1-alpha.3"
+    "@amilajack/helpers" "^0.0.1-alpha.0"
+    "@amilajack/merge-configs" "^0.0.1-alpha.0"
     get-port "^4.1.0"
     webpack "^4.28.4"
     webpack-cli "^3.2.1"
     webpack-dev-server "^3.1.14"
-
-"@amilajack/powerset@^0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@amilajack/powerset/-/powerset-0.0.0.tgz#3322c7642ddad8d5ebccb43b05520c29e83699d5"
-  integrity sha512-7l2qD/fBrGROYDGqPMFYn+xKKwWadKSpGkvYQ7Q7TESnw6ffQkKqe6o6knk5+yqzCNPlUgmAvLUaPH507UfJdQ==
 
 "@babel/cli@^7.2.3":
   version "7.2.3"

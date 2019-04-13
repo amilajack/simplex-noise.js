@@ -43,9 +43,11 @@ const suite = new Benchmark.Suite('simplex-noise')
     }
   })
   .on('complete', function() {
-    this.forEach(({name, times, stats}) => {
+    this.forEach(({ name, times, stats }) => {
       console.log(
-        `${name}: ${Benchmark.formatNumber(Math.round(1.0 / times.period))} ops/sec ±${Math.round(stats.rme)}%`
+        `${name}: ${Benchmark.formatNumber(
+          Math.round(1.0 / times.period)
+        )} ops/sec ±${Math.round(stats.rme)}%`
       );
     });
   })

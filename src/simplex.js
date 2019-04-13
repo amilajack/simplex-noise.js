@@ -21,7 +21,7 @@ export function Alea(...args) {
   s1 = mash(' ');
   s2 = mash(' ');
 
-  for (let i = 0; i < args.length; i++) {
+  for (let i = 0; i < args.length; i += 1) {
     s0 -= mash(args[i]);
     if (s0 < 0) {
       s0 += 1;
@@ -47,10 +47,10 @@ export function Alea(...args) {
 export function buildPermutationTable(random) {
   let i;
   const p = new Uint8Array(256);
-  for (i = 0; i < 256; i++) {
+  for (i = 0; i < 256; i += 1) {
     p[i] = i;
   }
-  for (i = 0; i < 255; i++) {
+  for (i = 0; i < 255; i += 1) {
     const r = i + ~~(random() * (256 - i));
     const aux = p[i];
     p[i] = p[r];
@@ -63,7 +63,7 @@ export function masher() {
   let n = 0xefc8249d;
   return data => {
     data = data.toString();
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i += 1) {
       n += data.charCodeAt(i);
       let h = 0.02519603282416938 * n;
       n = h >>> 0;
@@ -90,7 +90,7 @@ export default class SimplexNoise {
     this.p = buildPermutationTable(random);
     this.perm = new Uint8Array(512);
     this.permMod12 = new Uint8Array(512);
-    for (let i = 0; i < 512; i++) {
+    for (let i = 0; i < 512; i += 1) {
       this.perm[i] = this.p[i & 255];
       this.permMod12[i] = this.perm[i] % 12;
     }
@@ -361,18 +361,18 @@ export default class SimplexNoise {
     let ranky = 0;
     let rankz = 0;
     let rankw = 0;
-    if (x0 > y0) rankx++;
-    else ranky++;
-    if (x0 > z0) rankx++;
-    else rankz++;
-    if (x0 > w0) rankx++;
-    else rankw++;
-    if (y0 > z0) ranky++;
-    else rankz++;
-    if (y0 > w0) ranky++;
-    else rankw++;
-    if (z0 > w0) rankz++;
-    else rankw++;
+    if (x0 > y0) rankx += 1;
+    else ranky += 1;
+    if (x0 > z0) rankx += 1;
+    else rankz += 1;
+    if (x0 > w0) rankx += 1;
+    else rankw += 1;
+    if (y0 > z0) ranky += 1;
+    else rankz += 1;
+    if (y0 > w0) ranky += 1;
+    else rankw += 1;
+    if (z0 > w0) rankz += 1;
+    else rankw += 1;
     let i1; // The integer offsets for the second simplex corner
     let j1;
     let k1;
